@@ -1,0 +1,17 @@
+1- API
+2- N-Tier
+
+
+Project.Entities: Veritabanına aktarılacak modelleri tutar 
+Project.Conf: Veritabanı ayarları
+Project.Dal: veritabanı işlemleri
+Project.Bll: businnes logic
+
+UI => Bll => Dal şeklinde akış olmalı. 
+Entities ve Conf migration için gerekli ek modüller. Akışa dahil değildir.
+
+Unit of Works
+
+
+readonly sadece fieldlarda kullanılır ve sadece constructor'da atama yapılır.
+property'yi readonly yapmak için set özelliği yazılmaz.
