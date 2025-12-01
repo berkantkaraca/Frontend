@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Form Kontrolleri Örneği</h1>
+
+  <!--
+    Bu sayfada Html'in temel form kontrollerini gözlemleyeecksiniz
+
+    select (combobox)
+    checkbox
+    radio
+    textarea
+  -->
+
+  <form>
+    <!--Text Input-->
+    <label>Adınız:</label> <br />
+    <input type="text" name="fullName" placeholder="Adınızı yazınız" /> 
+
+    <br /> <br />
+
+    <!--Select(Combobox)
+      Kullanıcıya bir listedeki seceneklerden birini (veya daha fazlasını) secme imkanı veren kontrol
+      Tarayıcı bunu varsayılan olarak akordeon seklinde acılır kutu seklinde gösterir. 
+    --> 
+    <label>Sehir : </label> <br>
+    <select name="city">
+      <option value=""> Seciniz </option>
+      <option value="istanbul">İstanbul</option>
+      <option value="ankara">Ankara </option>
+      <option value="izmir">İzmir</option>
+    </select>
+
+    <br> <br>
+
+    <!--Checkbox
+      Birden fazla secenegi aynı anda işaretleyebileceginiz secimlerde kullanılır
+      Kabul ediyorum gibi kutu durumlarında sıkca görülür
+    -->
+    <label>İlgilendiginiz konular:</label> <br>
+    <input type="checkbox" name="topic" value="unreal Engine"> Unreal Engine <br>
+    <input type="checkbox" name="topic" value="unity"> Unity <br>
+    <input type="checkbox" name="topic" value="javascript"> JavaScript <br>
+
+    <br> <br>
+
+    <!--Radio
+      Aynı "name" altındaki seceneklerden sadece birini secmenizi saglar. 
+      Cinsiyet, paket secimi gibi durumlarda görürsünüz
+    -->
+    <label>Tercih ettiginiz seviye</label> <br>
+    <input type="radio" name="level" value="beginner"> Beginner <br>
+    <input type="radio" name="level" value="intermediate">Intermediate <br>
+    <input type="radio" name="level" value="advanced">Advanced <br>
+
+    <br> <br>
+
+    <!--TextArea
+      Uzun metin girişi icin kullanılır..
+      Yorum,acıklama,mesaj gibi alanlar icin idealdir. 
+    -->
+
+    <label>Hakkınızda kısa bir not:</label> <br>
+    <textarea name="about"></textarea> 
+    
+    <br> <br>
+
+    <button>Gönder</button>
+  </form>
+</body>
+
+</html>

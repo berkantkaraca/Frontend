@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive style</title>
+</head>
+
+<body>
+  <!--   
+    figure: tek basına anlamlı görsel ya da kod blogu gibi icerikleri sarmalamak icin kullanılır
+    figcaption: acıklama ekleriz
+
+    picture:  ekran boyutuna göre farklı resimler yüklemek icin kullanılır
+    responsive design icin oldukca önemli bir sistemdir
+-->
+
+  <picture>
+    <source media="(min-width:800px)" srcset="https://picsum.photos/800/400" />
+    <source media="(min-width:400px)" srcset="https://picsum.photos/400/200" />
+    <img src="https://picsum.photos/300/150" alt="Random" />
+  </picture>
+
+  <figure>
+    <img src="https://picsum.photos/300" alt="test" />
+    <figcaption>
+      Öylesine bir resim..Yukarıdaki ile test edilebilmek icin
+    </figcaption>
+  </figure>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header>Etkinlik kayıt sayfası</header>
+
+  <nav>
+    <!--Menü linklerimiz sayfa ici yonlendirme yapacak-->
+
+    <a href="#info">Bilgilendirme</a>
+    <a href="#register">Kayıt ol</a>
+  </nav>
+
+  <main>
+    <section id="info">
+      <h2>Etkinlik bilgileri</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, odio
+        similique? Sapiente nobis optio quaerat officia dignissimos odio natus
+        maxime placeat numquam molestias ipsum, consequatur error aliquid,
+        ducimus quos doloribus? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Delectus consequuntur nostrum, asperiores ut laborum
+        a reiciendis provident cumque, doloribus tempore quia corporis tenetur
+        quaerat unde optio odio voluptas repellendus consequatur! Lorem ipsum
+        dolor, sit amet consectetur adipisicing elit. Repellendus nemo natus
+        asperiores voluptates, laborum ea a amet at iure saepe, unde
+        necessitatibus! Ducimus atque laboriosam itaque ipsa dicta recusandae
+        ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+        sint fugiat, consequatur tenetur, commodi rerum est, placeat quas eum
+        sed veritatis provident dicta molestias magni quaerat tempore id.
+        Quam, harum?
+      </p>
+
+      <!--Baska siteye yönlendiren link yeni sekmede acılacak-->
+      <a target="_blank" href="https://www.ageofempires.com/">Oyun etkinligi- Age of Empires</a>
+    </section>
+
+    <section id="register">
+      <h2>Kayıt Formu</h2>
+
+      <form>
+        <label>Ad soyad:</label> <br />
+        <input type="text" name="fullName" /> 
+        <br /> <br />
+
+        <label>Seviye:</label> <br />
+        <select name="level">
+          <option value="">Seciniz</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <br /> <br />
+
+        <label>İlgilendiginiz konular:</label> <br />
+        <input type="checkbox" name="topic" value="unreal Engine" /> HTMLngine <br />
+        <input type="checkbox" name="topic" value="unity" /> CSS <br />
+        <input type="checkbox" name="topic" value="javascript" /> JavaScript
+        <br /> <br />
+
+        <label>Motivasyonunuz</label> <br />
+        <textarea name="motivation" rows="3" cols="40"></textarea> 
+        <br /> <br />
+
+        <button>Kaydı gönder</button>
+      </form>
+
+      <p>
+        <a href="#info">Etkinlik bilgilerini tekrar oku</a>
+      </p>
+
+      <button>Kayıt ol</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Sorular icin
+      <a href="mailto:info@example.com">info@example.com</a>
+    </p>
+  </footer>
+</body>
+
+</html>
