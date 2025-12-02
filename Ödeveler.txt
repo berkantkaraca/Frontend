@@ -1,0 +1,13 @@
+1- Domain Entityler'in kalanlarını API projesinde CAtegory'e uyguladığımız gibi Crud sistemini ekleyin
+2- Fluent Validation araştır. Request modellere entegre et
+3- Businnes Logic (Manager'lara) Delegateler eşliğinde hata yönetimi mekanizmaları yazılsın
+4- Author, Bool, Category, Tag
+
+1 Author n Book
+1 Book 1 Author
+1 Category n Book
+1 Book 1 Category
+
+
+namespaces => kütüphanedir. internal en küçük erişim belirteçidir 
+Kütüphane => çalışan kod topluluğu
