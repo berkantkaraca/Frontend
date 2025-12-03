@@ -11,3 +11,9 @@
 
 namespaces => kütüphanedir. internal en küçük erişim belirteçidir 
 Kütüphane => çalışan kod topluluğu
+
+
+basemanagerda delegate ekle 
+1 delegate yazıp içine 1 tane try-catch yazılıp metot içinde delegatei kullan
+veya 2 farklı değer döndüren ve döndürmeyen şeklinde de yazılabilir
+
