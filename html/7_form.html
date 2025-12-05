@@ -1,0 +1,32 @@
+<form>
+
+  <!--
+    FORM : 
+    Web'in interaktif olmasını saglar.
+
+    Veri girilmedigi sürece web sayfanız sadece brosurdur.
+
+    input tag'i sizin veri girişi yapabileceginiz ve type attribute'una göre veri girişi acısından sekillenebilen bir tag'dir...
+
+    name attribute'u sizin arka tarafa veri göndereceginiz zaman buradaki degerlerin oradaki verilere bind olması icin yazabileceginiz explicit(acık) bir attribute'tur.
+
+    HTML/Css/Js kullanıcının browser'ında çalışır.
+
+    button : Form icinde bulunuyorsa tıklandıgında otomatik olarak ilgili form'u server'a gönderen bir yapıdır.
+
+    eger bir button'u input tag'iyle yaratıyorsanız butonun üzerinde yazan yazıyı value attribute'uyla vermeniz gerekir. Aynı zamanda bu sekilde acılan buttonun form'u back end'e gönderebilmesini istiyorsanız tipinin submit olması gerekir. Button tag'i böyle bir zaruriyete sahip degildir.
+
+    Backend ve JavaScript, name attribute üzerinden calısır.
+    Form yoksa, internet tek yönlüdür.
+  -->
+
+  <label>Email</label> <br>
+  <input type="email" name="email"> <br> <br>
+
+  <label>Password</label> <br>
+  <input type="password" name="password"> <br> <br>
+
+  <!-- <input type="button" value="Login"> -->
+
+  <button>Login</button>
+</form>
