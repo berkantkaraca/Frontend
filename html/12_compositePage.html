@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!--
+    Semantik Yapı
+    Liste kullanımı (ul, ol)
+    Form Kontrolleri (input,select,textarea)
+
+    Hala CSS ve JavaScript yok ama sayfa hala anlamlı ve kullanılabilir olabilir
+  -->
+
+  <header>
+    <h1>Front End kursu kayıt sayfası</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Ana sayfa</a></li>
+      <li><a href="#">Ders Programı</a></li>
+      <li><a href="#">Kayıt</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Kurs hakkında</h2>
+      <p>
+        Bu kurs, HTML, CSS ve JavaScript temellerini ögrenmek isteyenler icin
+        hazırlanmıstır. Özellikle benim ögrencilerim HTML'e bayılırlar
+      </p>
+
+      <ul>
+        <li>Toplam 5 gün</li>
+        <li>Günde 20 saat</li>
+        <li>Örnekler</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Kayıt Formu</h2>
+
+      <form>
+        <label>Ad soyad:</label> <br />
+        <input type="text" name="fullName" /> <br />
+        <br />
+
+        <label>Seviye:</label> <br />
+        <select name="level">
+          <option value="">Seciniz</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <br /> <br />
+
+        <label>İlgilendiginiz konular:</label> <br />
+        <input type="checkbox" name="topic" value="unreal Engine" /> HTML Engine <br />
+        <input type="checkbox" name="topic" value="unity" /> CSS <br />
+        <input type="checkbox" name="topic" value="javascript" /> JavaScript
+        <br /> <br />
+
+        <label>Motivasyonunuz</label> <br />
+        <textarea name="motivation" rows="3" cols="40"></textarea> <br />
+        <br />
+
+        <button>Kaydı gönder</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vb02</p>
+  </footer>
+</body>
+
+</html>
