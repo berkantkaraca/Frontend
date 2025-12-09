@@ -1,0 +1,18 @@
+/*Section Title : alt seviye baslıkları öne cıkarmak*/
+.section-title{
+    text-transform: uppercase; /*metni büyük harflere cevirir*/
+    letter-spacing: 2px; /*Harflar arası bosluk*/
+}
+
+/*Accent ile vurgulu stil*/
+.accent{
+    color:orange;
+    font-weight: bold;
+}
+
+/*small-note tasarımı*/
+.small-note{
+    color:grey;
+    font-size:0.9rem; /*rem(root em) default sayfa font size'idir. Mesela diyelim ki sizin sayfa font size'iniz 16 ise 1 rem = 16'ya denk gelecektir*/
+    font-style: italic;
+}

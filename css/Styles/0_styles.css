@@ -1,0 +1,37 @@
+/*
+CSS'in temel yapısı:  selectorlarla baslar. 
+selector(seciciler): Bir css dosyasının  tasarımdaki ilgili elemente nasıl ulasacagını, onu nasıl sececegini söyler. 
+
+*selector  = hangi elemente stil uygulayacagımız
+Tag ismine göre  seciciler (h1,p,label)
+Id ismine göre seciciler (#)
+Class ismine göre seciciler(.)
+
+* property = hangi özelligin degişecegi (color,font-size, backgroung-color)
+* value = o özelligin degeri(red,16px,#333, vs)
+*/
+
+/*Tag ismine göre selectorler*/
+body{
+    /*property : value*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /*metin fontu*/
+    background-color: aqua; /*arka plan rengi*/
+}
+
+/*Baslıklar icin basit bir stil*/
+h1{
+    color:red;
+    text-align:center; /*ortalama*/
+}
+
+h2{
+    color:green;
+}
+
+/*class'a yönelik seciciler*/
+.highlight{
+  background-color: yellow;
+  padding:10px; /*bir yapının icerisindeki degerin yapının kendi cercevesine göre olan boslugudur*/
+  border-left: 10px solid  blue;   /*sol cizgi*/
+}
+
