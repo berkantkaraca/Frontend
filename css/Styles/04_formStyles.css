@@ -1,0 +1,41 @@
+/* 
+Form tasarımı 
+Form alanları hizalı , okunabilir ve aralarında bosluk olacak şekilde olmalı bu yüzden bu tarz bir tasarım yapıyoruz
+*/
+.simple-form{
+    background-color: white;
+    padding:20px;
+    border-radius: 6px;
+    width: 300px;
+}
+
+/*input ve textarealar*/
+.simple-form input[type="text"],
+.simple-form input[type="email"],
+.simple-form textarea{
+    width:100%;
+    padding:8px;
+    margin-top:3px;
+    margin-bottom: 12px;
+    border:1px solid blue;
+    border-radius: 50px;
+    box-sizing: border-box; /*width hesaplanırken padding'i de dahil eder*/
+}
+
+textarea{
+    resize: vertical;
+}
+
+/*Button tasarımı*/
+.simple-form button{
+ background-color: blue;
+ border:none;
+ color:white;
+ padding:10px 15px;
+ border-radius: 20px;
+ cursor: pointer;
+}
+
+.simple-form button:hover{
+    background-color: green;
+}

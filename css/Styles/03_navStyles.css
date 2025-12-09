@@ -1,0 +1,30 @@
+/*
+Navigation Menü icin tasarım
+navlar yatay bir şekilde hizalanacak
+arkaplan renkleri ve linkler button gibi gösterilecek
+*/
+
+.main-nav ul{
+    list-style-type: none; /*madde basındaki noktaları kaldırır*/
+    padding:0;
+    margin:0;
+}
+
+.main-nav li{
+    display:inline-block;/*li'leri yan yana dizer*/
+    margin-right: 15px; /*li'ler arası bosluk*/
+}
+
+.main-nav a{
+    text-decoration: none; /*alt cizgiyi kaldırdık*/
+    color:white;
+    background-color: deeppink ;
+    padding: 10px;
+    border-radius: 30px;/*kose ovalleştirme*/
+}
+
+.main-nav a:hover{
+    background-color: darkcyan;
+}
+
+

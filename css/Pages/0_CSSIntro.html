@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <style></style>
+
+  <!--
+    HTML, bu nedir sorusuna cevap verir (baslık,paragraf,link, form...)
+    CSS(Cascading Style Sheet) ise "Bu nasıl gözüksün" sorusuna cevap verir
+
+    Style sheet = stil tanımı
+    Cascading = öncelik / akıs sistemi (Hangi eleman hangi kurala göre nasıl görünsün)
+
+
+    Inline CSS : 
+    Bir html node'unun start tag'inde style keyword'u ile yazmaya basladıgınız CSS, Inline CSS olarak adlandırılır. Normal şartlarda akışta en önceliği olan CSS yazım yöntemidir. 
+  
+    Internal CSS : 
+    Bir HTML dosyasındaki head taglerinin arasında style tag'i acarak yazmaya basladıgınız CSS'e internal CSS denir. Eger o ilgili sayfa icerisinde bir tasarımı birden fazla kullanmak istiyosrsak ama baska sayfalarda kullanma niyetiniz yoksa ve CSS kodlarınız cok kalabalık degilse o zaman bu yöntemde CSS yazmayı tercih edersiniz..
+
+    External CSS:
+    Ayrı bir dosya olarak acıp CSS kodları yazdıgımızda ve sonra bu dosyayı kullanmak istedigimiz bir HTML sayfasında referans ettigimizde bu sefer de External CSS yazmıs oluruz..
+
+    link rel = "stylesheet" :  "Bu dosya bir stil dosyasıdır" anlamına gelir. 
+    Kısacası Html'in diyemedigini CSS der. HTML 'Bu paragraf öne cıksın' diyemez bunu CSS söyler. 
+  -->
+
+  <meta charset="UTF-8" />
+  <title>Css</title>
+
+  <!-- <link rel="stylesheet" href="/Styles/0_styles.css"> -->
+  <link rel="stylesheet" href="../Styles/0_styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Css'e hosgeldiniz</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Neden CSS?</h2>
+      <p>
+        Html , bir sayfayın ne anlattıgını bildirir ama onu
+        güzelleştiremez.CSS ise bu anlatının nasıl tasarlanacagını bildirir
+      </p>
+    </section>
+
+    <section>
+      <h2>Basit bir örnek</h2>
+      <p class="highlight">
+        BU paragrafa dikkat ediniz. Kendisi highlight class attribute'u almıstır.
+        Ve bu sekilde renklendirilecektir. Yani CSS, HTML'in yazdıgı bir elementi secip ona
+        stil uygulayacaktır
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

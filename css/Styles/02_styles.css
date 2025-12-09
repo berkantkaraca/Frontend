@@ -1,0 +1,20 @@
+/*Genel box tasarımı*/
+.box{
+    background-color: maroon;
+    border:2px solid darkblue; 
+    padding:20px; /*İceriden kutunun kenarlarına olan mesafe*/
+    margin :20px; /*Kutunun dısındaki bosluk*/
+}
+
+/*example-box icin ekstra stil*/
+.example-box{
+    color:rgb(187, 255, 0);
+}
+
+.example-box-2{
+    border-color: rgb(16, 46, 16);
+    padding:10px; /*daha az ic bosluk olacak*/
+    margin-left: 60px;/*dıs tarafdan sola daha cok bosluk*/
+    margin-right: 120px;
+    margin-top:40px;
+}
