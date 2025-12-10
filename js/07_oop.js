@@ -230,19 +230,3 @@ for (const shape of shapes) {
  * 
  * Composition Over Inheritance prensibi nedir araştır.
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
