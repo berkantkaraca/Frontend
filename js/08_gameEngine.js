@@ -71,7 +71,7 @@ const Dice = {
 
 //Uzay Gemisi Sınıfı
 //öncelikle br base(bütün gemileri temsil edecek) sınıf oluşturalım
-class SpaceShip {
+class StarShip {
     constructor(config) {
         this.name = config.name;
         this.faction = config.faction; //star trek veya star wars
@@ -146,11 +146,9 @@ class SpaceShip {
 
         if (this.shields > 0) {
             const absorbed = Math.min(this.shields, remaining);
+            this.shields -= absorbed;
+            remaining -= absorbed;
         }
-
-        this.shields -= absorbed;
-
-        remaining -= absorbed;
 
         if (remaining > 0) {
             this.hull -= remaining;
@@ -165,7 +163,7 @@ class SpaceShip {
 
         logger.batlle(`${srcName} ${rawDamage} hasarı ${this.name}'e verdi! (Gövde: ${this.hull}/${this.maxHull}, Kalkan: ${this.shields}/${this.maxShields})`);
 
-        if(!this.isAlive()) {
+        if (!this.isAlive()) {
             logger.batlle(`${this.name} yok edildi!`);
         }
     }
@@ -178,17 +176,55 @@ class SpaceShip {
             return;
         }
 
-        const fluctuation = Dice.rollRange(-3, 3); 
-        const damage =  Math.max(5, this.firepower + fluctuation); //minimum 5 hasar
+        const fluctuation = Dice.rollRange(-3, 3);
+        const damage = Math.max(5, this.firepower + fluctuation); //minimum 5 hasar
 
         logger.batlle(`${this.name}, ${target.name} hedefine saldırı düzenliyor`);
 
         target.takeDamage(damage, logger, this);
     }
 
-}        
+    //Kalkanları güclendirme : hull'a odaklanmaz sadece shield destegi verir
+    reinforceShields(logger) {
+        let bonus = 8;
+        if (this.faction === "Star Trek") {
+            //Trek tarafı daha iyidir
+            bonus = 12;
+        }
 
+        this.shields += bonus;
+        if (this.shields > this.maxShields) this.shields = this.maxShields;
 
+        logger.battle(
+            `${this.name} kalkanlarını ${bonus} kadar destekledi...MEvcut kalkan durumu ${this.shields}/${this.maxShields}`
+        );
+    }
 
+    //Ozel yetenek kullanılabilir mi bunu kontrol eden bir sistem
+    canUseSpecial() {
+        return this.specialReadyIn === 0;
+    }
 
+    //Özel yetenek mantıgı : 
+    useSpecial(target, logger) {
+        if (!this.canUseSpecial()) {
+            logger.warn(`${this.name} isimli geminin özel yetenegi henüz hazır degil`);
+            return;
+        }
 
+        if (this.specialType === "trek_precision") {
+            //Target lock üstünlügü (hedef kitleme)
+            //Kalkan bypass , hedef evasion düsürüsü
+            logger.battle(`${this.name} isimli gemi hedefi olan ${target.name} gemisine ${this.specialName} isimli özel yetenegini kullanıyor `);
+            
+            const damage = this.firePower + 20 + this.techLevel; //teknoloji katkısı ile birlikte özel yetenegin gücü
+            const oldEvasion = target.evasion; //hedefin orijinal evasion'i baska bir constant'ta durur ama biz bu seferlik özel güc kullandık diye hedefin evasion'i aktif 0'a cekeriz...
+            target.evasion = 0;
+            target.takeDamage(damage, logger, this);
+            target.evasion = Math.max(0, oldEvasion - 5);
+            logger.state(`${target.name} isimli geminin kacınma yetenegi sensör kilidinden dolayı 5 puan azaldı`);
+
+            //todo : özel yetenekleri tanımlamaya devam edecegiz
+        }
+    }
+}
