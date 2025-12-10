@@ -198,3 +198,21 @@ const logSum = (a, b) => {
 const returned = logSum(3,4);
 console.log("Returned: ", returned); //undefined
 logSum(5,6); // bu şelilde kullanılmalı
+
+
+//Stratagy Pattern - Function ile davranış değiştirme
+console.log("\n==== Strategy Pattern ====");
+function calculate(a, b, strategyFn ) {
+    return strategyFn(a, b);
+}
+
+const strategies = {
+    add: (x, y) => x + y,
+    subtract: (x, y) => x - y,
+    power: (x, y) => x ** y,
+};
+
+console.log("Toplama: ", calculate(5, 3, strategies.add));
+console.log("Çıkarma: ", calculate(5, 3, strategies.subtract));
+console.log("Üs alma: ", calculate(2, 4, strategies.power));
+
