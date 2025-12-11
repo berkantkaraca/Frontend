@@ -46,4 +46,3 @@ function tayfayiYazdir(tayfaListesi: { id: number; name: string; role: string }[
 }
 
 tayfayiYazdir(tayfa);
-
