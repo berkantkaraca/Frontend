@@ -26,6 +26,3 @@ let nullableNumber: number | null = null; //union type: number veya null olabili
 
 //TS sadece static type dünyasında çalışır
 //runtime'da hal JS kodu çalışır
-
-
-

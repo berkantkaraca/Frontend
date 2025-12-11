@@ -16,20 +16,3 @@ console.log(addTs(1, 2)); // 3
 
 //tsc --init  => tsconfig.json dosyasını oluşturur
 //tsc 01_TypescriptIntro.ts => dosya build edilir ve aynı klasörde 01_TypescriptIntro.js dosyasını oluşturur
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
