@@ -1,0 +1,21 @@
+<!-- 
+  RouterOutlet: angular router'ın aktif route'a ait component'i basacağı placeholder'dır. MVC3'deleki @RenderBody() gibidir.
+  RouterLink: angular router'ın route'lar arasında geçiş yapmasını sağlayan directive'tir.
+-->
+
+<nav style="display: flex; padding: 12px; border-bottom: 1px solid black;">
+  <a routerLink="">Home</a>
+  <a routerLink="products">Products</a>
+
+</nav>
+
+<main style="padding: 12px;">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- 
+  RouterLink çalışsın diye AppComponent'İn importlarına eskiden RouterModule koyardık. Standalone sistemlerinde artık RouterOutlet + RouterLink direktiflerini eklemek gererkir.
+
+  <a href=""> => tam sayfa relaod yapar (state kaybolabilir)
+  routerLink => client-side navigation saglar sadece icerigi degiştirir
+-->

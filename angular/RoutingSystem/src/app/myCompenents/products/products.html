@@ -1,0 +1,9 @@
+<h2>Products</h2>
+
+<ul>
+    @for(p of products; track p.id) {
+        <li>
+            <a [routerLink]="['/products', p.id]">{{p.name}} {{p.price}}</a>
+        </li>
+    }
+</ul>
