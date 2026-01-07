@@ -1,0 +1,20 @@
+<h2>Template Fundamentals</h2>
+
+<label for="">İsim
+  <input type="text" placeholder="isim" (input)="onNameInput($event)">
+</label>
+
+<p>Canlı önizleme: <b>{{ name() }}</b></p>
+
+@if (!isNameValid()) {
+  <div style="color: red; margin-top: 6px;">İsim boş olamaz</div>
+}
+
+
+<!-- 
+  Form validation aslında UI state yönetimidir. 
+  Reactive forms'da da aynı mantık vardır.
+-->
+<!-- [disabled] sistemi tag property binding olarak geçer -->
+<button (click)="submit()" [disabled]="!isNameValid()">Gönder</button>
+  
