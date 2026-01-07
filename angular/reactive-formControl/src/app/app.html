@@ -1,0 +1,34 @@
+<h2>Reactive Form Control</h2>
+
+<label>
+  <!-- [formControl]: bu input'u direkt FormControl'e bağlar -->
+  isim:
+  <input type="text" placeholder="isim" [formControl]="nameControl" />
+</label>
+
+<!-- Hata mesajı kuralı -->
+@if(nameControl.invalid && nameControl.touched) {
+  <div class="error" style="color: red;">
+    @if(nameControl.errors?.['required']) {
+      <span>İsim zorunludur.</span>
+    } 
+    @else if(nameControl.errors?.['minlength']) {
+      <span>İsim en az 3 karakter olmalıdır.</span>
+    } 
+    @else if(nameControl.errors?.['maxlength']) {
+      <span>İsim en fazla 10 karakter olmalıdır.</span>
+    }
+  </div>
+}
+
+<hr>
+
+<ul class="state">
+  <li>value: {{ nameControl.value }}</li>
+  <li>touched: {{ nameControl.touched }}</li>
+  <li>dirty: {{ nameControl.dirty }}</li>
+  <li>valid: {{ nameControl.valid }}</li>
+  <li>invalid: {{ nameControl.invalid }}</li>
+</ul>
+
+<button (click)="submit()" [disabled]="nameControl.invalid">Gönder</button>
