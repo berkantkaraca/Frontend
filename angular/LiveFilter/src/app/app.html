@@ -1,0 +1,13 @@
+<h2>Canlı Filtreleme</h2>
+
+<input type="text" (input)="onSearchInput($event)" placeholder="Kategori ara...">
+
+@if (filteredCategories().length === 0) {
+  <p>Hiç kategori bulunamadı.</p>
+}
+
+<ul>
+  @for (category of filteredCategories(); track category) {
+  <li>{{ category }}</li>
+  }
+</ul>
