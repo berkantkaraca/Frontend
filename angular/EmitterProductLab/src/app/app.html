@@ -1,0 +1,68 @@
+<h2>Sepetim</h2>
+
+@if(cart().length === 0){
+<div class="selected">Sepetiniz boş.</div>
+}
+@else{
+<div class="selected">
+  <b>Sepetinizdeki Ürünler:</b>
+  <ul>
+    @for(item of cart(); track item.product.id){
+    <li>
+      Ürün Adı: {{ item.product.name }} -
+      Miktar: {{ item.quantity }} -
+      Fiyat: {{ item.product.price | currency: 'USD': 'symbol' }} -
+      Toplam Fiyat: {{ (item.product.price * item.quantity) | currency: 'USD': 'symbol' }}
+
+      <button (click)="removeFromCart(item.product.id)">Remove</button>
+    </li>
+    }
+  </ul>
+</div>
+}
+
+<hr>
+
+<div class="selected">
+  <b>Toplam Fiyatı:</b>
+  {{ cartTotal() | currency: 'USD': 'symbol' }}
+</div>
+
+<hr>
+
+
+<!-- Seçili ürün gösterimi -->
+@if(selectedProduct() !== null){
+<div class="selected">
+  <b>Seçilen Ürün</b>
+  Ürün Adı: {{ selectedProduct()!.name }}
+  Ürün Fiyatı: {{ selectedProduct()!.price | currency: 'USD': 'symbol' }}
+</div>
+}
+@else{
+<div class="selected"> Hiçbir ürün seçilmedi. </div>
+}
+
+<hr>
+
+<h2>Ürün Listesi</h2>
+
+<label>
+  Ürün Adı Filtre:
+  <input type="text" [(ngModel)]="searchText" placeholder="Ürün adı girin">
+</label>
+
+<label>
+  Maksimum Fiyat Filtre:
+  <input type="number" [(ngModel)]="maxPrice" placeholder="Maksimum fiyat girin">
+</label>
+
+<!-- Yöntem 1: Custom Pipe ile filtreleme -->
+<!-- <app-product-list [products]="products() | productFilter: searchText():maxPrice()" (selected)="onChildSelected($event)"
+  (addToCart)="onAddToCart($event)">
+</app-product-list> -->
+
+<!-- Yöntem 2: Computed Signal ile düz filtreleme (aktif) -->
+<app-product-list [products]="filteredProducts()" (selected)="onChildSelected($event)"
+  (addToCart)="onAddToCart($event)">
+</app-product-list>
