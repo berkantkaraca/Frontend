@@ -1,0 +1,80 @@
+<p>directives works!</p>
+
+<h2>Angular Structural Directives</h2>
+
+<!-- ngIf -->
+<section>
+    <h3>*ngIf Directive Example</h3>
+    <!-- Bir DOM elemanını koşullu olarak göstermenizi sağlar -->
+
+    <button (click)="toggleLogin()">{{ isLoggedIn ? 'Logout' : 'Login' }}</button>
+    <p>Mevcut login durumu: {{ isLoggedIn }}</p>
+
+    <div *ngIf="isLoggedIn">
+        Hoşgeldin, {{ username }}! (Bu yazı isLoggedIn true ise görünecek)
+    </div>
+
+    <!-- Burada "asıl içerik" için bir div, "else" bloğu için başka bir template kullanılır -->
+    <div *ngIf="isLoggedIn; else questBlock">
+        <p>Sisteme girildi</p>
+    </div>
+
+    <ng-template #questBlock>
+        Lütfen giriş yapınız.
+    </ng-template>
+</section>
+
+<hr>
+
+<!-- ngFor -->
+<section>
+    <h3>*ngFor Directive Example</h3>
+    
+    <button (click)="toogleStudent()">{{ showStudents ? 'Hide' : 'Show' }} Students</button>
+
+    <ul *ngIf="showStudents">
+        <!-- 
+            *ngFor ile dizideki her eleman için <li> oluşturur
+            let student of students: students dizisini dolaşır, student değişkenine her elemanı atar
+            let i = index: mevcut elemanın dizindeki indeksini i değişkenine atar
+        -->
+        <li *ngFor="let student of students; let i = index;">
+            {{ i + 1 }}. {{ student }}
+        </li>
+    </ul>
+
+    <!-- Object array: Courses -->
+    <h4>Courses Listesi</h4>
+    <table border="1" [cellPadding]="6">
+        <tr>
+            <th>Id</th>
+            <th>Isim</th>
+            <th>Seviye</th>
+        </tr>
+        <tr *ngFor="let course of courses">
+            <td>{{ course.id }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.level }}</td>
+        </tr>
+    </table>
+</section>
+
+<hr>
+
+<!-- ngSwitch -->
+<section>
+    <h3>[ngSwitch] Directive Example</h3>
+
+    <p>Şuanki rol: {{ selectedRole }}</p>
+
+    <button (click)="setRole('student')">Student</button>
+    <button (click)="setRole('teacher')">Teacher</button>
+    <button (click)="setRole('admin')">Admin</button>
+
+    <div [ngSwitch]="selectedRole" style="margin-top: 12px;">
+        <p *ngSwitchCase="'student'">Öğrenci rolündesiniz.</p>
+        <p *ngSwitchCase="'teacher'">Öğretmen rolündesiniz.</p>
+        <p *ngSwitchCase="'admin'">Admin rolündesiniz.</p>
+        <p *ngSwitchDefault>Geçersiz rol seçimi.</p>
+    </div>
+</section>

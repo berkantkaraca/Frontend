@@ -1,0 +1,1 @@
+component oluşturma: ng g component myComponents/data-binding --skip-tests --standalone
