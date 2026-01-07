@@ -1,0 +1,23 @@
+<h3>Ürün Listesi (child component)</h3>
+
+<p><b>Toplam ürün:</b> {{ products.length }}</p>
+
+@if (products.length === 0 ) {
+<p>Ürün bulunmamaktadır.</p>
+}
+@else {
+<ul>
+    @for (product of products; track product.id) {
+    <li>
+        @if (product.price > 1000) {
+        <b>{{ product.name }} </b>
+        }
+        @else {
+        {{ product.name }}
+        }
+        - {{ product.price | currency:'USD':'symbol':'1.2-2' }}
+
+    </li>
+    }
+</ul>
+}
