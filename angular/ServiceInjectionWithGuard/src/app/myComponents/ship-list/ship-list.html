@@ -1,0 +1,13 @@
+<h2> Gemi Listesi</h2>
+
+<ul>
+    @for(s of ships(); track s.id) {
+        <li>
+            <strong>İsim:</strong> {{s.name}} <br>
+            <strong>Kaptan:</strong> {{s.captain}} <br>
+            <strong>Sınıf:</strong> {{s.class}} <br>
+            <a [routerLink]="['/ships', s.id]">Detay</a>
+        </li>
+    }
+</ul>
+
