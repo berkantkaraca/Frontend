@@ -1,0 +1,53 @@
+<h2>Pipes ve Formatlama</h2>
+<hr>
+
+<p>Orijinal : {{ shipName() }}</p>
+<p>UpperCase : {{ shipName() | uppercase }}</p>
+<p>LowerCase : {{ shipName() | lowercase }}</p>
+<hr>
+
+<h3>Number Pipes</h3>
+<p>Orijinal : {{ price() }}</p>
+
+<!-- 
+  '1.0-0' => en az 1 tam sayı ve 0-0'da 0 ondalık
+  '1.2-2' => en az 1 tam sayı ve 2-2'de 2 ondalık
+  {{value | number:'minIntegerDigits.minFractionDigits-maxFractionDigits'}}
+
+-->
+<p>Formatlı Fiyat : {{ price() | number:'1.0-0' }}</p>
+<p>En az 1 tam, en az 2 - en fazla 2 ondalık : {{ price() | number:'1.2-2' }}</p>
+<p>En az 2 tam, en fazla 3 ondalık : {{ price() | number:'2.0-3' }}</p>
+<p>En az bir tam, 1-3 arası ondalık : {{ price() | number:'1.1-3' }}</p>
+
+<!-- 
+  Currency formatının içerisinde otomatik number vardır:
+  -code, symbol
+
+  {{value | currency:code:display:digitsInfo:locale}}
+
+-->
+<p>Para Formatı: {{ price() | currency:'EUR' : 'symbol' }}</p>
+<p>Para Formatı: {{ price() | currency:'USD' : 'symbol':'1.2-2':'en-US' }}</p>
+<hr>
+
+<h3>Date Pipes</h3>
+<p>Orijinal: {{ createdAt() }}</p>
+<p>Tarih(dd/mm/yyyy): {{ createdAt() | date:'dd/MM/yyyy' }}</p>
+<p>Tarih + Saat: {{ createdAt() | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+<p>yyyy-mm-dd: {{ createdAt() | date:'yyyy-MM-dd' }}</p>
+<p>full: {{ createdAt() | date:'full' }}</p>
+<p>short: {{ createdAt() | date:'short' }}</p>
+<hr>
+
+<h3>Json Pipe</h3>
+<p>
+  {{
+    {
+    name: shipName(),
+    price: price(),
+    quantity: quantity(),
+    createdAt: createdAt()
+    }| json
+  }}
+</p>
