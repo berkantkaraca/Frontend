@@ -1,0 +1,56 @@
+<h2>Reactive Form 2</h2>
+
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+  <label>
+    isim: <input type="text" formControlName="name" />
+    <!-- formControlName: FormGroup içindeki kontrol adına bind olur -->
+  </label>
+
+  @if (contactForm.get("name")?.touched && contactForm.get("name")?.invalid) {
+  <div style="color: red;">
+    @if(contactForm.get("name")?.errors?.['required']) {
+    <span>İsim alanı zorunludur.</span>
+    }
+    @else if(contactForm.get("name")?.errors?.['minlength']) {
+    <span>İsim alanı en az 3 karakter olmalıdır.</span>
+    }
+    @else if (contactForm.get("name")?.errors?.['maxlength']) {
+    <span>İsim alanı en fazla 10 karakter olmalıdır.</span>
+    }
+  </div>
+  }
+  <br>
+
+  <label>
+    Email: <input type="email" formControlName="email" />
+  </label>
+  @if (contactForm.get("email")?.touched && contactForm.get("email")?.invalid) {
+  <div style="color: red;">
+    @if(contactForm.get("email")?.errors?.['required']) {
+    <span>Email alanı zorunludur.</span>
+    }
+    @else if(contactForm.get("email")?.errors?.['email']) {
+    <span>Email alanı geçerli bir email olmalıdır.</span>
+    }
+  </div>
+  }
+  <br>
+
+  <label>
+    Telefon: <input type="text" formControlName="phone" />
+  </label>
+
+  @if (contactForm.get("phone")?.touched && contactForm.get("phone")?.invalid) {
+  <div style="color: red;">
+    @if(contactForm.get("phone")?.errors?.['required']) {
+    <span>Telefon alanı zorunludur.</span>
+    }
+    @else if(contactForm.get("phone")?.errors?.['minlength'] || contactForm.get("phone")?.errors?.['maxlength']) {
+    <span>Telefon alanı 10 karakter olmalıdır.</span>
+    }
+  </div>
+  }
+  <br>
+
+  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+</form>
