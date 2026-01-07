@@ -1,0 +1,90 @@
+<h2>Nested Form</h2>
+
+<form [formGroup]="orderForm" (ngSubmit)="submit()">
+  <h4>Müşteri Bilgileri</h4>
+
+  <div formGroupName="customer">
+    <label>
+      İsim:
+      <input type="text" formControlName="name" />
+    </label>
+
+    @if (orderForm.get('customer.name')?.touched && orderForm.get('customer.name')?.invalid) {
+    <div style="color:red">
+      @if (orderForm.get('customer.name')?.errors?.['required']) {
+      <span>İsim alanı zorunludur.</span>
+      }
+      @else if (orderForm.get('customer.name')?.errors?.['minlength']) {
+      <span>İsim en az 3 karakter olmalıdır.</span>
+      }
+      @else if (orderForm.get('customer.name')?.errors?.['maxlength']) {
+      <span>İsim en fazla 10 karakter olmalıdır.</span>
+      }
+    </div>
+    }
+
+    <br>
+
+    <label>
+      Email:
+      <input type="email" formControlName="email" />
+    </label>
+
+    @if (orderForm.get('customer.email')?.touched && orderForm.get('customer.email')?.invalid) {
+    <div style="color:red">
+      @if (orderForm.get('customer.email')?.errors?.['required']) {
+      <span>Email zorunludur.</span>
+      }
+      @else if (orderForm.get('customer.email')?.errors?.['email']) {
+      <span>Geçerli bir email giriniz.</span>
+      }
+    </div>
+    }
+
+    <br>
+
+    <label>
+      Telefon:
+      <input type="text" formControlName="phone" />
+    </label>
+
+    @if (orderForm.get('customer.phone')?.touched && orderForm.get('customer.phone')?.invalid) {
+    <div style="color:red">
+      <span>Telefon 10 haneli olmalıdır.</span>
+    </div>
+    }
+
+  </div>
+
+  <h4>Ürün Bilgileri</h4>
+
+  <div formGroupName="product">
+
+    <label>
+      İsim:
+      <input type="text" formControlName="name" />
+    </label>
+
+    @if (orderForm.get('product.name')?.touched && orderForm.get('product.name')?.invalid) {
+    <div style="color:red">
+      <span>Ürün adı en az 3 karakter olmalıdır.</span>
+    </div>
+    }
+
+    <br>
+
+    <label>
+      Fiyat:
+      <input type="number" formControlName="price" />
+    </label>
+
+    @if (orderForm.get('product.price')?.touched && orderForm.get('product.price')?.invalid) {
+    <div style="color:red">
+      <span>Fiyat 0 veya daha büyük olmalıdır.</span>
+    </div>
+    }
+
+  </div>
+
+  <button type="submit" [disabled]="orderForm.invalid">Submit</button>
+</form>
