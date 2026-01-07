@@ -1,0 +1,23 @@
+<h2>Form State</h2>
+
+<label> İsim:
+  <input type="text" (input)="onInput($event)" (blur)="onBlur()" />
+</label>
+
+<!-- Hata mesajını kullanıcı form'a dokunduysa ve yapı invalid ise gösterilir -->
+
+@if(touched() && invalid()){
+<div style="color: red;">İsim en az 3 karakter olmalıdır.</div>
+}
+<hr>
+
+<p><b>Form State:</b></p>
+<ul>
+  <li>touched: {{ touched() }}</li>
+  <li>dirty: {{ dirty() }}</li>
+  <li>valid: {{ valid() }}</li>
+  <li>invalid: {{ invalid() }}</li>
+</ul>
+<hr>
+
+<button [disabled]="invalid()">Gönder</button>
